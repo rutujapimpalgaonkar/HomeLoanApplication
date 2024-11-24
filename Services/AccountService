@@ -1,0 +1,29 @@
+using HomeLoanApplication.Repositories;
+
+namespace HomeLoanApplication.Services
+{
+    public class AccountService : IAccountService
+    {
+        private readonly IAccountRepository _accountRepository;
+
+        public AccountService(IAccountRepository accountRepository)
+        {
+            _accountRepository = accountRepository;
+        }
+
+        public Task<bool> DeleteAccountAsync(int accountId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task GetAllAccountsAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<bool> ValidateAccountExistsAsync(int accountId)
+        {
+            return await _accountRepository.AccountExistsAsync(accountId);
+        }
+    }
+}
